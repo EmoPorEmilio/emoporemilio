@@ -7,9 +7,9 @@ var environment = require("./environment");
 var express = require("express");
 
 //* HTTPS *//
-var privateKey  = fs.readFileSync(environment.privateKey, 'utf8');
-var certificate = fs.readFileSync(environment.certificate, 'utf8');
-var credentials = {key: privateKey, cert: certificate}
+//var privateKey  = fs.readFileSync(environment.privateKey, 'utf8');
+//var certificate = fs.readFileSync(environment.certificate, 'utf8');
+//var credentials = {key: privateKey, cert: certificate}
 
 //* EXPRESS INIT *//
 var app = express();
