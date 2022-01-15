@@ -1,5 +1,6 @@
-### Hi there 👋
+### Buenaaaas
 
+Soy EmoPorEmilio, apasionado por el desarrollo web y gamer, transmito online acerca de juegos y tecnología en general.
 <!--
 **EmoPorEmilio/emoporemilio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
