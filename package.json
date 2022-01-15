@@ -1,0 +1,12 @@
+{
+  "name": "emoporemilio-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "EmoPorEmilio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
