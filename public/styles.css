@@ -3,7 +3,7 @@ body {
 }
 
 img {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
 }
 
@@ -14,9 +14,9 @@ img {
 }
 
 .socialContainer {
-  width: 60%;
+  width: 40%;
   max-width: 500px;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   align-content: center;
   justify-content: space-between;
