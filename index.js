@@ -6,6 +6,11 @@ process.title = "node-emoporemilio";
 var environment = require("./environment");
 var express = require("express");
 
+//* HTTPS *//
+var privateKey  = fs.readFileSync(environment.privateKey, 'utf8');
+var certificate = fs.readFileSync(environment.certificate, 'utf8');
+var credentials = {key: privateKey, cert: certificate}
+
 //* EXPRESS INIT *//
 var app = express();
 app.use(express.static(environment.APP_BASE_PATH + "public"));
