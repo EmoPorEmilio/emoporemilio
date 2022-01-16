@@ -3,13 +3,17 @@
 process.title = "node-emoporemilio";
 
 //* DEPENDENCIES *//
-var environment = require("./environment");
-var express = require("express");
+const environment = require("./environment");
+const express = require("express");
+const fs = require("fs");
+const https = require("https");
+const path = require("path"); 
+const { EXPRESS_HTTPS_PORT } = require("./environment");
 
 //* HTTPS *//
-//var privateKey  = fs.readFileSync(environment.privateKey, 'utf8');
-//var certificate = fs.readFileSync(environment.certificate, 'utf8');
-//var credentials = {key: privateKey, cert: certificate}
+var privateKey  = fs.readFileSync(environment.privateKey);
+var certificate = fs.readFileSync(environment.certificate);
+var credentials = {key: privateKey, cert: certificate}
 
 //* EXPRESS INIT *//
 var app = express();
@@ -24,8 +28,9 @@ app.all("*", (_req, res) => {
   }
 });
 
-app.listen(environment.EXPRESS_PORT, function () {
-  console.log(
-    "EmoPorEmilio corriendo en el puerto " + environment.EXPRESS_PORT
-  );
-});
+https.createServer(credentials, app)
+  .listen(EXPRESS_HTTPS_PORT, function() {
+    console.log(
+      "EmoPorEmilio corriendo en el puerto " + EXPRESS_HTTPS_PORT
+    );
+  });
