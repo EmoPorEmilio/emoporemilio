@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: #34232d;
 }
 
 img {
@@ -14,7 +14,6 @@ img {
 }
 
 .socialContainer {
-  width: 40%;
   max-width: 500px;
   margin-top: 20px;
   display: flex;
@@ -29,7 +28,7 @@ img {
   filter: grayscale(100%);
 }
 
-.icon:hover{
+.icon:hover {
   filter: grayscale(0%);
 }
 
