@@ -41,3 +41,15 @@ img {
   justify-content: center;
   flex-direction: column;
 }
+
+.announcementContainer {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #f1acd4;
+  font-size: 8pt;
+  margin: 8px;
+  text-align: center;
+}
+
+.announcementHighlight {
+  color: #d6f4af;
+}
