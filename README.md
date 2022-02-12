@@ -1,4 +1,4 @@
-### Buenaaaas
+### Bueeeeeeenas
 
 Soy EmoPorEmilio, apasionado por el desarrollo web y gamer, transmito online acerca de juegos y tecnología en general.
 <!--
