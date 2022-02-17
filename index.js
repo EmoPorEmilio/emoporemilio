@@ -13,7 +13,8 @@ const { EXPRESS_HTTPS_PORT } = require("./environment");
 //* HTTPS *//
 var privateKey  = fs.readFileSync(environment.privateKey);
 var certificate = fs.readFileSync(environment.certificate);
-var credentials = {key: privateKey, cert: certificate}
+var chain = fs.readFileSync(environment.chain);
+var credentials = {key: privateKey, cert: certificate, ca: chain}
 
 //* EXPRESS INIT *//
 var app = express();
