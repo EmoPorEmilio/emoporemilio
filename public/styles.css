@@ -7,6 +7,11 @@ img {
   height: auto;
 }
 
+a {
+  color: #d6f4af;
+  text-decoration: underline;
+}
+
 .logoContainer {
   display: flex;
   align-content: center;
