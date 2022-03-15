@@ -1,5 +1,5 @@
 body {
-  background-color: #34232d;
+  background-color: #1a1a1a;
 }
 
 img {
@@ -57,4 +57,10 @@ a {
 
 .announcementHighlight {
   color: #d6f4af;
+}
+
+/* Large rounded green border */
+hr {
+  max-width: 25%;
+  border: 1px solid #9b9b9b;
 }
