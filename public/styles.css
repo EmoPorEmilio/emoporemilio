@@ -1,5 +1,9 @@
 body {
-  background-color: #1a1a1a;
+  background-color: #252525;
+  cursor: url('./resources/pointer.png'), auto;
+}
+:hover {
+  cursor: url('./resources/pointer-hover.png'), auto;
 }
 
 img {
@@ -8,7 +12,7 @@ img {
 }
 
 a {
-  color: #d6f4af;
+  color: #d072b7;
   text-decoration: underline;
 }
 
@@ -48,19 +52,23 @@ a {
 }
 
 .announcementContainer {
-  font-family: 'Montserrat Alternates', sans-serif;
-  color: #f1acd4;
-  font-size: 8pt;
-  margin: 8px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 100;
+  color: #bbb;
+  font-size: 15pt;
+  font-weight: 400;
+  margin: 32px;
   text-align: center;
 }
 
 .announcementHighlight {
-  color: #d6f4af;
+  font-weight: 600;
+  color: #d3f5a6;
 }
 
 /* Large rounded green border */
 hr {
-  max-width: 25%;
-  border: 1px solid #9b9b9b;
+  max-width: 500px;
+  width: 75%;
+  border: 1px solid #d072b7;
 }
