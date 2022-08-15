@@ -183,7 +183,7 @@ const drawLegendText = () => {
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
-    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 700);
+    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 650);
   }
   const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60)
     .toString()
@@ -194,7 +194,7 @@ const drawLegendText = () => {
   const secs = Math.floor((elapsedTimeMs / 1000) % 60)
     .toString()
     .padStart(2, '0');
-  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 650);
+  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 600);
 };
 
 const drawElements = () => {
