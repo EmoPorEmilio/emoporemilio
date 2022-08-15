@@ -1,8 +1,12 @@
 // web sockets
 let socket = io();
 
-socket.on('reset', (msg) => {
-  resetTimer(0);
+socket.on('reset', () => {
+  resetTimer();
+});
+
+socket.on('setTime', (msg) => {
+  setTimer(msg.hours, msg.minutes);
 });
 
 const colors = {
@@ -47,8 +51,12 @@ let intervalTime = setInterval(() => {
 }, 50);
 
 const resetTimer = () => {
-  startTimeMs = new Date().getTime();
-  elapsedTimeMs = 0;
+  setTimer();
+};
+
+const setTimer = (hours = 0, minutes = 0) => {
+  elapsedTimeMs = hours * 60 * 60 * 1000 + minutes * 60 * 1000;
+  startTimeMs = new Date().getTime() - elapsedTimeMs;
 };
 
 const stageColor = (stage) => {

@@ -23,7 +23,7 @@ export const setupBot = (io) => {
   const sameCommand = (inputNames, command) => {
     let same = false;
     inputNames.forEach((input) => {
-      same = same || input.toUpperCase() === command.toUpperCase();
+      same = same || input.toUpperCase().startsWith(command.toUpperCase);
     });
     return same;
   };
@@ -60,6 +60,18 @@ export const setupBot = (io) => {
           chatter.toUpperCase() === 'EMOPOREMILIO'
         ) {
           io.emit('reset', {});
+        }
+        if (
+          foundCommand.name === 'setTime' &&
+          chatter.toUpperCase() === 'EMOPOREMILIO'
+        ) {
+          const numbersToSet = commandInput.split(' ')[1];
+          const numbersSeparated = numbersToSet.split(':');
+          const firstNumber = parseInt(numbersSeparated[0]);
+          const secondNumber = parseInt(numbersSeparated[1]);
+          if (numbersToSet) {
+            io.emit('setTime', { hours: firstNumber, minutes: secondNumber });
+          }
         }
         client.say(target, foundCommand.message);
         console.log(`* Executed !${foundCommand.name} command`);

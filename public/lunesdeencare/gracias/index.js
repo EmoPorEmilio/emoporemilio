@@ -56,7 +56,7 @@ const names = [
   'Trasgo',
   'haganenolucia',
   'mediablankspace',
-  'Sevggg',
+  'Sevg',
 ];
 
 let currentNameIndex = 0;
