@@ -13,17 +13,34 @@ const colors = {
 };
 
 const names = [
+  'teaceptouna',
+  'soyBatu',
+  'wasabimanu',
   'ogeronimo',
   '7infa',
   'Maaaudo',
-  'soyBatu',
-  'wasabimanu',
+  'budindepunk',
   'teknoduke',
-  'slinero',
+  'Slinero',
   'piisaa',
   'NicoNr',
   'Pratix',
   'Mabsurdo',
+  'ElProfe_SKZ',
+  'rodryme',
+  'tinagusx',
+  'JumaTLive',
+  'ProfCuack',
+  'Leito_UwU',
+  'ManzDev',
+  'xAgustin93',
+  'Sicordelico',
+  'MiniCodeLab',
+  'GoncyPozzo',
+  'Neko',
+  'kalarse',
+  'CrazyMcKenzie',
+  'Unefelante',
 ];
 
 let currentNameIndex = 0;
