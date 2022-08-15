@@ -23,7 +23,7 @@ const centerX = width / 2;
 const centerY = height / 2;
 const radius = Math.min(height, width) / 2 - 50;
 
-const maxTimeMs = 2 * 60 * 1000;
+const maxTimeMs = 2 * 60 * 60 * 1000;
 let startTimeMs = new Date().getTime();
 let elapsedTimeMs = 0;
 
