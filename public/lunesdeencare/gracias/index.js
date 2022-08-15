@@ -42,6 +42,7 @@ const names = [
   'kalarse',
   'CrazyMcKenzie',
   'Unefelante',
+  'AstebanCeppi',
 ];
 
 let currentNameIndex = 0;
