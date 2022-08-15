@@ -23,7 +23,7 @@ export const setupBot = (io) => {
   const sameCommand = (inputNames, command) => {
     let same = false;
     inputNames.forEach((input) => {
-      same = same || input.toUpperCase().startsWith(command.toUpperCase);
+      same = same || input.toUpperCase().startsWith(command.toUpperCase());
     });
     return same;
   };
@@ -62,7 +62,7 @@ export const setupBot = (io) => {
           io.emit('reset', {});
         }
         if (
-          foundCommand.name === 'setTime' &&
+          foundCommand.name === 'setTimer' &&
           chatter.toUpperCase() === 'EMOPOREMILIO'
         ) {
           const numbersToSet = commandInput.split(' ')[1];

@@ -53,6 +53,13 @@ export const RESET_ANIMATION = {
   message: 'Comenzando Lunes de Encare!',
 };
 
+export const SET_TIMER_ANIMATION = {
+  name: 'setTimer',
+  names: ['setTimer'],
+  action: 'setTimerAnimation',
+  message: 'Setteando hora de Lunes de Encare!',
+};
+
 export const TEXT_COMMANDS = [
   REDES_COMMAND,
   TWITTER_COMMAND,

@@ -5,7 +5,7 @@ socket.on('reset', () => {
   resetTimer();
 });
 
-socket.on('setTime', (msg) => {
+socket.on('setTimer', (msg) => {
   setTimer(msg.hours, msg.minutes);
 });
 
