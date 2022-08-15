@@ -100,11 +100,10 @@ export const setupBot = (io) => {
   };
 
   const initSpamRedesInterval = () => {
-    /* por ahora no
-  spamRedesInterval = setInterval(() => {
-    spamRedes();
-    //saveUsersToMongo();
-  }, 60 * 60 * 1000);*/
+    spamRedesInterval = setInterval(() => {
+      spamRedes();
+      //saveUsersToMongo();
+    }, 60 * 60 * 1000);
   };
 
   // Called every time the bot connects to Twitch chat

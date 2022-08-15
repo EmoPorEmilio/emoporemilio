@@ -13,6 +13,7 @@ const colors = {
 };
 
 const names = [
+  'Rosi',
   'teaceptouna',
   'soyBatu',
   'wasabimanu',
