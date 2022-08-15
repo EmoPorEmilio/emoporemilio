@@ -194,7 +194,7 @@ const drawLegendText = () => {
     ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 650);
     ctx.font = `400 40px Jost`;
     ctx.fillStyle = colors.darkpink;
-    const minutesToNextStage = Math.floor(
+    const minutesToNextStage = Math.ceil(
       (stage.endPoint * maxTimeMs - elapsedTimeMs) / 1000 / 60
     )
       .toString()
