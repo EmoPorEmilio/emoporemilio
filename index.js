@@ -1,37 +1,32 @@
-"use strict";
-// Optional. You will see this name in eg. 'ps' or 'top' command
-process.title = "node-emoporemilio";
+'use strict';
+process.title = 'node-emoporemilio';
 
 //* DEPENDENCIES *//
-const environment = require("./environment");
-const express = require("express");
-const fs = require("fs");
-const https = require("https");
-const path = require("path"); 
-const { EXPRESS_HTTPS_PORT } = require("./environment");
+import { environment } from './environment.js';
+import express from 'express';
+import fs from 'fs';
+import https from 'https';
+import { Server } from 'socket.io';
+import { setupBot } from './bot.js';
 
 //* HTTPS *//
-var privateKey  = fs.readFileSync(environment.privateKey);
+var privateKey = fs.readFileSync(environment.privateKey);
 var certificate = fs.readFileSync(environment.certificate);
 var chain = fs.readFileSync(environment.chain);
-var credentials = {key: privateKey, cert: certificate, ca: chain}
+var credentials = { key: privateKey, cert: certificate, ca: chain };
 
 //* EXPRESS INIT *//
 var app = express();
-app.use(express.static(environment.APP_BASE_PATH + "public"));
+app.use(express.static(environment.APP_BASE_PATH + 'public'));
 
-//* ENDPOINTS *//
-app.all("*", (_req, res) => {
-  try {
-    res.sendFile(environment.APP_BASE_PATH + "index.html");
-  } catch (error) {
-    res.json({ success: false, message: "Ha ocurrido un error" });
-  }
-});
-
-https.createServer(credentials, app)
-  .listen(EXPRESS_HTTPS_PORT, function() {
-    console.log(
-      "EmoPorEmilio corriendo en el puerto " + EXPRESS_HTTPS_PORT
-    );
+const server = https
+  .createServer(credentials, app)
+  .listen(environment.EXPRESS_HTTPS_PORT, function () {
+    console.log('EmoPorEmilio corriendo en el puerto ' + EXPRESS_HTTPS_PORT);
   });
+
+//* BOT *//
+
+const io = new Server(server);
+
+setupBot(io);
