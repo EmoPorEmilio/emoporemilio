@@ -177,9 +177,10 @@ const drawLegendText = () => {
   const stage = getCurrentStage();
   ctx.fillStyle = colors.darkpink;
   ctx.font = ` 400 45px Jost`;
-  const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60);
-  const mins = Math.floor(elapsedTimeMs / 1000 / 60) % 60;
-  const secs = Math.floor(elapsedTimeMs / 1000) % 60;
+  ctx.textAlign = 'center';
+  const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60).padStart(2, '0');
+  const mins = Math.floor((elapsedTimeMs / 1000 / 60) % 60).padStart(2, '0');
+  const secs = Math.floor((elapsedTimeMs / 1000) % 60).padStart(2, '0');
   ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 620);
   /*
   if (stage) {
