@@ -153,8 +153,8 @@ const drawDynamicElements = () => {
   ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.arc(
-    width / 2,
-    height / 2,
+    centerXClock,
+    centerYClock,
     radius,
     -Math.PI / 2,
     currentAngle - Math.PI / 2
@@ -162,8 +162,8 @@ const drawDynamicElements = () => {
   ctx.stroke();
   ctx.beginPath();
   ctx.arc(
-    width / 2 - radius * Math.sin(currentAngle - Math.PI),
-    height / 2 + radius * Math.cos(currentAngle - Math.PI),
+    centerXClock - radius * Math.sin(currentAngle - Math.PI),
+    centerYClock + radius * Math.cos(currentAngle - Math.PI),
     20,
     0,
     2 * Math.PI
