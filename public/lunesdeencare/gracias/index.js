@@ -52,6 +52,10 @@ const names = [
   'dimanacho',
   'matiasradriguez',
   'EliuxTV',
+  'ShyGuyMD',
+  'Trasgo',
+  'haganenolucia',
+  'mediablankspace',
 ];
 
 let currentNameIndex = 0;
