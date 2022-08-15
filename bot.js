@@ -65,6 +65,8 @@ export const setupBot = (io) => {
           foundCommand.name === 'setTimer' &&
           chatter.toUpperCase() === 'EMOPOREMILIO'
         ) {
+          console.log(chatter);
+          console.log(commandInput);
           const numbersToSet = commandInput.split(' ')[1];
           const numbersSeparated = numbersToSet.split(':');
           const firstNumber = parseInt(numbersSeparated[0]);
