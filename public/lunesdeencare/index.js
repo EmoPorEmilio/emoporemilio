@@ -181,6 +181,7 @@ const drawLegendText = () => {
   const mins = (Math.floor(elapsedTimeMs / 1000 / 60) % 60).toFixed(2);
   const secs = (Math.floor(elapsedTimeMs / 1000) % 60).toFixed(2);
   ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 620);
+  /*
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
@@ -189,7 +190,7 @@ const drawLegendText = () => {
       centerX + 130,
       620
     );
-  }
+  }*/
 };
 
 const drawElements = () => {
