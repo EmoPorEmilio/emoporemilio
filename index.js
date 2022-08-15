@@ -2,7 +2,7 @@
 process.title = 'node-emoporemilio';
 
 //* DEPENDENCIES *//
-import { environment } from './environment.js';
+import environment from './environment.js';
 import express from 'express';
 import fs from 'fs';
 import https from 'https';

@@ -1,5 +1,5 @@
 import tmi from 'tmi.js';
-import { environment } from './environment.js';
+import environment from './environment.js';
 import { TEXT_COMMANDS, REDES_COMMAND } from './text-commands.js';
 
 // Setup client
