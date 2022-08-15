@@ -52,7 +52,7 @@ export const setupBot = (io) => {
   const checkCommandsAndReact = (commandInput, target, chatter) => {
     if (!checkListCommandAndReact(commandInput, target)) {
       const foundCommand = TEXT_COMMANDS.find((command) =>
-        sameCommand(command.names, commandInput)
+        sameCommand(command.names, commandInput.split(' ')[0])
       );
       if (foundCommand) {
         if (
