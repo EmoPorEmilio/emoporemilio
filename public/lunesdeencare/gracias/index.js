@@ -14,6 +14,11 @@ const colors = {
 
 const names = [
   'Rosi',
+  'nombreetc',
+  'ElGeibryel',
+  'Tekzee',
+  'ElProfe_SKZ',
+  'basiclandlord_mtg',
   'teaceptouna',
   'soyBatu',
   'wasabimanu',
@@ -27,7 +32,6 @@ const names = [
   'NicoNr',
   'Pratix',
   'Mabsurdo',
-  'ElProfe_SKZ',
   'rodryme',
   'tinagusx',
   'JumaTLive',
@@ -43,6 +47,9 @@ const names = [
   'CrazyMcKenzie',
   'Unefelante',
   'AstebanCeppi',
+  'eugitaa',
+  'sabryjoplin_',
+  'dimanacho',
 ];
 
 let currentNameIndex = 0;
