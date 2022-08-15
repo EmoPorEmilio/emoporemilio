@@ -106,7 +106,7 @@ const drawStaticElements = () => {
 
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.arc(width / 2, height / 2, radius, 0, 2 * Math.PI);
+  ctx.arc(centerXClock, centerYClock, radius, 0, 2 * Math.PI);
   ctx.fill();
 
   /*
@@ -183,7 +183,7 @@ const drawLegendText = () => {
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
-    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 730);
+    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 700);
   }
   const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60)
     .toString()
@@ -194,7 +194,7 @@ const drawLegendText = () => {
   const secs = Math.floor((elapsedTimeMs / 1000) % 60)
     .toString()
     .padStart(2, '0');
-  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 680);
+  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 650);
 };
 
 const drawElements = () => {
