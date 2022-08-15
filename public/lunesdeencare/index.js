@@ -23,7 +23,7 @@ const centerX = width / 2;
 const centerY = height / 2;
 const radius = Math.min(height, width) / 2 - 50;
 
-const maxTimeMs = 12000;
+const maxTimeMs = 2 * 60 * 1000;
 let startTimeMs = new Date().getTime();
 let elapsedTimeMs = 0;
 
@@ -177,7 +177,10 @@ const drawLegendText = () => {
   const stage = getCurrentStage();
   ctx.fillStyle = colors.darkpink;
   ctx.font = ` 400 45px Jost`;
-  ctx.fillText(`Estamos en: `, centerX, 620);
+  const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60).toFixed(2);
+  const mins = (Math.floor(elapsedTimeMs / 1000 / 60) % 60).toFixed(2);
+  const secs = (Math.floor(elapsedTimeMs / 1000) % 60).toFixed(2);
+  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 620);
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
