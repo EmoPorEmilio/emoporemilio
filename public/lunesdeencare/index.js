@@ -181,7 +181,7 @@ const drawLegendText = () => {
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
-    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 750);
+    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 730);
   }
   const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60)
     .toString()
