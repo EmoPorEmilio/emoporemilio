@@ -51,6 +51,7 @@ const names = [
   'sabryjoplin_',
   'dimanacho',
   'matiasradriguez',
+  'EliuxTV',
 ];
 
 let currentNameIndex = 0;
