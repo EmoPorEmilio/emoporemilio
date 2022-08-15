@@ -178,9 +178,15 @@ const drawLegendText = () => {
   ctx.fillStyle = colors.darkpink;
   ctx.font = ` 400 45px Jost`;
   ctx.textAlign = 'center';
-  const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60).padStart(2, '0');
-  const mins = Math.floor((elapsedTimeMs / 1000 / 60) % 60).padStart(2, '0');
-  const secs = Math.floor((elapsedTimeMs / 1000) % 60).padStart(2, '0');
+  const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60)
+    .toString()
+    .padStart(2, '0');
+  const mins = Math.floor((elapsedTimeMs / 1000 / 60) % 60)
+    .toString()
+    .padStart(2, '0');
+  const secs = Math.floor((elapsedTimeMs / 1000) % 60)
+    .toString()
+    .padStart(2, '0');
   ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 620);
   /*
   if (stage) {
