@@ -21,7 +21,9 @@ const width = canvas.width;
 const height = canvas.height;
 const centerX = width / 2;
 const centerY = height / 2;
-const radius = Math.min(height, width) / 2 - 50;
+const centerXClock = centerX;
+const centerYClock = 270;
+const radius = 250;
 
 const maxTimeMs = 2 * 60 * 60 * 1000;
 let startTimeMs = new Date().getTime();
@@ -70,23 +72,23 @@ const getCurrentStage = () =>
 
 const drawStageFillColor = (stage, index) => {
   ctx.fillStyle = stageColor(stage);
-  const firstPoint = { x: centerX, y: centerY };
+  const firstPoint = { x: centerXClock, y: centerYClock };
   ctx.beginPath();
   ctx.moveTo(firstPoint.x, firstPoint.y);
 
   if (elapsedTimeMs / maxTimeMs >= stage.endPoint) {
     ctx.globalAlpha = 0.33;
     ctx.arc(
-      centerX,
-      centerY,
+      centerXClock,
+      centerYClock,
       radius,
       -Math.PI / 2 + previousStartPoint(index) * 2 * Math.PI,
       -Math.PI / 2 + stage.endPoint * 2 * Math.PI
     );
   } else if (elapsedTimeMs / maxTimeMs >= previousStartPoint(index)) {
     ctx.arc(
-      centerX,
-      centerY,
+      centerXClock,
+      centerYClock,
       radius,
       -Math.PI / 2 + previousStartPoint(index) * 2 * Math.PI,
       -Math.PI / 2 + (elapsedTimeMs / maxTimeMs) * 2 * Math.PI
