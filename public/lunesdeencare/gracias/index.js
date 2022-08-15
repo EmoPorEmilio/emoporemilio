@@ -58,6 +58,7 @@ const names = [
   'mediablankspace',
   'Sevg',
   'nikorc93',
+  'Uruguays',
 ];
 
 let currentNameIndex = 0;
