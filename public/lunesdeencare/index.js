@@ -192,14 +192,17 @@ const drawLegendText = () => {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
     ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 650);
-    ctx.font = `400 45px Jost`;
+    ctx.font = `400 40px Jost`;
     ctx.fillStyle = colors.darkpink;
-    const minutesToNextStage =
-      Math.floor(stage.endPoint * maxTimeMs - elapsedTimeMs) / 1000 / 60;
+    const minutesToNextStage = Math.floor(
+      (stage.endPoint * maxTimeMs - elapsedTimeMs) / 1000 / 60
+    )
+      .toString()
+      .padStart(2, '0');
     ctx.fillText(
       `Siguiente Etapa en: ${minutesToNextStage} minutos`,
       centerX,
-      650
+      700
     );
   }
   ctx.font = `400 45px Jost`;
