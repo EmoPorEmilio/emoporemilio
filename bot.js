@@ -72,7 +72,7 @@ export const setupBot = (io) => {
           const firstNumber = parseInt(numbersSeparated[0]);
           const secondNumber = parseInt(numbersSeparated[1]);
           if (numbersToSet) {
-            io.emit('setTime', { hours: firstNumber, minutes: secondNumber });
+            io.emit('setTimer', { hours: firstNumber, minutes: secondNumber });
           }
         }
         client.say(target, foundCommand.message);
