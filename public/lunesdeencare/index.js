@@ -187,17 +187,12 @@ const drawLegendText = () => {
   const secs = Math.floor((elapsedTimeMs / 1000) % 60)
     .toString()
     .padStart(2, '0');
-  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 620);
-  /*
+  ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 680);
   if (stage) {
     ctx.fillStyle = stageColor(stage);
     ctx.font = `800 45px Jost`;
-    ctx.fillText(
-      stage.type === 'work' ? 'Trabajo' : 'Descanso',
-      centerX + 130,
-      620
-    );
-  }*/
+    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 700);
+  }
 };
 
 const drawElements = () => {
