@@ -178,6 +178,11 @@ const drawLegendText = () => {
   ctx.fillStyle = colors.darkpink;
   ctx.font = ` 400 45px Jost`;
   ctx.textAlign = 'center';
+  if (stage) {
+    ctx.fillStyle = stageColor(stage);
+    ctx.font = `800 45px Jost`;
+    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 720);
+  }
   const hours = Math.floor(elapsedTimeMs / 1000 / 60 / 60)
     .toString()
     .padStart(2, '0');
@@ -188,11 +193,6 @@ const drawLegendText = () => {
     .toString()
     .padStart(2, '0');
   ctx.fillText(`${hours}:${mins}:${secs}`, centerX, 680);
-  if (stage) {
-    ctx.fillStyle = stageColor(stage);
-    ctx.font = `800 45px Jost`;
-    ctx.fillText(stage.type === 'work' ? 'Trabajo' : 'Descanso', centerX, 700);
-  }
 };
 
 const drawElements = () => {
