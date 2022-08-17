@@ -13,6 +13,7 @@ const colors = {
 };
 
 const names = [
+  'eduardojra96',
   'Rosi',
   'nombreetc',
   'ElGeibryel',
