@@ -89,6 +89,7 @@ export const setupBot = (io) => {
   };
   // Called every time a message comes in
   function onMessageHandler(target, context, msg, self) {
+    io.emit('chatMessage', { msg, username: context.username });
     if (self) {
       return;
     } // Ignore messages from the bot

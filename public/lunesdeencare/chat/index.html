@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./index.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+      #chatbox {
+        overflow: hidden;
+        height: 800px;
+        width: 400px;
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(69, 40, 61, 0.85);
+        border-radius: 12px;
+      }
+      .message {
+        font-family: 'Jost';
+        font-size: 28px;
+        color: #fff;
+        flex: 1;
+        display: flex;
+        padding: 12px;
+      }
+      .header {
+        padding-left: 12px;
+        padding-right: 12px;
+        display: flex;
+        height: 45px;
+        background-color: #111111;
+        align-items: center;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+      img {
+        object-fit: contain;
+      }
+      .name {
+        font-family: 'Jost';
+        font-weight: 600;
+        color: #c3e19b;
+        font-size: 28px;
+        padding-left: 12px;
+        flex: 1;
+      }
+      @font-face {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400, 600;
+        src: url('../fonts/jost-v14-latin-regular.woff2') format('woff2'),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url('../fonts/jost-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    <div id="chatbox">
+      <div class="container">
+        <div class="header">
+          <img src="./logo.png" alt="" />
+          <span class="name">Emopore Milio</span>
+          <img src="./icons.png" alt="" />
+        </div>
+        <div class="message">
+          <span
+            >Este es un mensajensaje de chat de chat de ejemplo!!!!!!!!!!!</span
+          >
+        </div>
+      </div>
+      <div class="container">
+        <div class="header">
+          <img src="./logo.png" alt="" />
+          <span class="name">Emopore Milio</span>
+          <img src="./icons.png" alt="" />
+        </div>
+        <div class="message">
+          <span>este es un mensaje de chat de ejemplo!</span>
+        </div>
+      </div>
+  </body>
+</html>
