@@ -32,7 +32,7 @@ const addMessage = (message, name) => {
   container.appendChild(msgElement);
   span.innerHTML = message;
 
-  chatbox.appendChild(container);
+  chatbox.prepend(container);
   chatbox.scroll({ top: chatbox.scrollHeight, behavior: 'smooth' });
 };
 
