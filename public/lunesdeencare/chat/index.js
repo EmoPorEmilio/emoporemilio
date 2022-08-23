@@ -36,8 +36,8 @@ const addMessage = (message, name) => {
   chatbox.scroll({ top: chatbox.scrollHeight, behavior: 'smooth' });
   requestAnimationFrame(() => {
     // second state
-    chatbox.style.opacity = 1;
-    chatbox.style.transform = 'scale(1)';
+    container.style.opacity = 1;
+    container.style.transform = 'scale(1)';
   });
 };
 
