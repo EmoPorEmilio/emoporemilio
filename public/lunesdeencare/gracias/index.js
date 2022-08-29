@@ -60,6 +60,7 @@ const names = [
   'Sevg',
   'nikorc93',
   'Uruguays',
+  'programacion_en_esp',
 ];
 
 let currentNameIndex = 0;

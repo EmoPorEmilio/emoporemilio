@@ -1,6 +1,7 @@
 import tmi from 'tmi.js';
 import environment from './environment.js';
 import { TEXT_COMMANDS, REDES_COMMAND } from './text-commands.js';
+import { creadores } from './creator-shoutouts.js';
 
 // Setup client
 
@@ -50,10 +51,14 @@ export const setupBot = (io) => {
   };
 
   const checkCommandsAndReact = (commandInput, target, chatter) => {
+    let command = commandInput.split(' ')[0];
     if (!checkListCommandAndReact(commandInput, target)) {
-      const foundCommand = TEXT_COMMANDS.find((command) =>
-        sameCommand(command.names, commandInput.split(' ')[0])
+      let foundCommand = TEXT_COMMANDS.find((textCommand) =>
+        sameCommand(textCommand.names, command)
       );
+      foundCommand =
+        foundCommand ||
+        creadores.find((creador) => sameCommand(creador.name, command));
       if (foundCommand) {
         if (
           foundCommand.name === 'reset' &&
@@ -89,7 +94,8 @@ export const setupBot = (io) => {
   };
   // Called every time a message comes in
   function onMessageHandler(target, context, msg, self) {
-    io.emit('chatMessage', { msg, username: context.username });
+    io.emit('chatMessage', { msg, username: context['display-name'] });
+    console.log(context);
     if (self) {
       return;
     } // Ignore messages from the bot

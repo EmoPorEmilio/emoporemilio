@@ -5,27 +5,41 @@ process.title = 'node-emoporemilio';
 import environment from './environment.js';
 import express from 'express';
 import fs from 'fs';
+import http from 'http';
 import https from 'https';
 import { Server } from 'socket.io';
 import { setupBot } from './bot.js';
 
-//* HTTPS *//
-var privateKey = fs.readFileSync(environment.privateKey);
-var certificate = fs.readFileSync(environment.certificate);
-var chain = fs.readFileSync(environment.chain);
-var credentials = { key: privateKey, cert: certificate, ca: chain };
-
 //* EXPRESS INIT *//
 var app = express();
-app.use(express.static(environment.APP_BASE_PATH + 'public'));
 
-const server = https
-  .createServer(credentials, app)
-  .listen(environment.EXPRESS_HTTPS_PORT, function () {
-    console.log(
-      'EmoPorEmilio corriendo en el puerto ' + environment.EXPRESS_HTTPS_PORT
-    );
-  });
+let server = null;
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(environment.APP_BASE_PATH + 'public'));
+  //* HTTPS *//
+  const privateKey = fs.readFileSync(environment.privateKey);
+  const certificate = fs.readFileSync(environment.certificate);
+  const chain = fs.readFileSync(environment.chain);
+  const credentials = { key: privateKey, cert: certificate, ca: chain };
+
+  server = https
+    .createServer(credentials, app)
+    .listen(environment.EXPRESS_HTTPS_PORT, function () {
+      console.log(
+        'EmoPorEmilio corriendo en el puerto ' + environment.EXPRESS_HTTPS_PORT
+      );
+    });
+} else {
+  app.use(express.static(environment.APP_BASE_PATH_LOCAL + 'public'));
+  server = http
+    .createServer(app)
+    .listen(environment.EXPRESS_HTTPS_PORT, function () {
+      console.log(
+        'EmoPorEmilio corriendo en el puerto ' + environment.EXPRESS_HTTPS_PORT
+      );
+    });
+}
 
 //* BOT *//
 
