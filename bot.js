@@ -2,6 +2,7 @@ import tmi from 'tmi.js';
 import environment from './environment.js';
 import { TEXT_COMMANDS, REDES_COMMAND } from './text-commands.js';
 import { creadores } from './creator-shoutouts.js';
+import { htmlToText } from 'html-to-text';
 
 // Setup client
 
@@ -20,6 +21,47 @@ export const setupBot = (io) => {
   client.on('message', onMessageHandler);
   client.on('connected', onConnectedHandler);
   client.connect();
+
+  const parseEmotes = (message, emotes, emoteOnly) => {
+    if (!emotes) return message;
+
+    const emoteEntries = Object.entries(emotes);
+    const onlyOneEmote =
+      emoteEntries.length === 1 && emoteEntries[0][1].length === 1;
+    const emoteSize = onlyOneEmote && emoteOnly ? '3.0' : '1.0';
+
+    // store all emote keywords
+    // ! you have to first scan through
+    // the message string and replace later
+    const stringReplacements = [];
+
+    // iterate of emotes to access ids and positions
+    emoteEntries.forEach(([id, positions]) => {
+      // use only the first position to find out the emote key word
+      const position = positions[0];
+      const [start, end] = position.split('-');
+      const stringToReplace = message.substring(
+        parseInt(start, 10),
+        parseInt(end, 10) + 1
+      );
+
+      stringReplacements.push({
+        stringToReplace: stringToReplace,
+        replacement: `<img src="https://static-cdn.jtvnw.net/emoticons/v1/${id}/${emoteSize}">`,
+      });
+    });
+
+    // generate HTML and replace all emote keywords with image elements
+    const messageHTML = stringReplacements.reduce(
+      (acc, { stringToReplace, replacement }) => {
+        // obs browser doesn't seam to know about replaceAll
+        return acc.split(stringToReplace).join(replacement);
+      },
+      message
+    );
+
+    return messageHTML;
+  };
 
   const sameCommand = (inputNames, command) => {
     let same = false;
@@ -70,8 +112,6 @@ export const setupBot = (io) => {
           foundCommand.name === 'setTimer' &&
           chatter.toUpperCase() === 'EMOPOREMILIO'
         ) {
-          console.log(chatter);
-          console.log(commandInput);
           const numbersToSet = commandInput.split(' ')[1];
           const numbersSeparated = numbersToSet.split(':');
           const firstNumber = parseInt(numbersSeparated[0]);
@@ -94,8 +134,16 @@ export const setupBot = (io) => {
   };
   // Called every time a message comes in
   function onMessageHandler(target, context, msg, self) {
-    io.emit('chatMessage', { msg, username: context['display-name'] });
-    console.log(context);
+    //
+    const emotesParsedMsg = parseEmotes(
+      htmlToText(msg),
+      context.emotes ?? {},
+      context['emote-only']
+    );
+    io.emit('chatMessage', {
+      msg: emotesParsedMsg,
+      username: context['display-name'],
+    });
     if (self) {
       return;
     } // Ignore messages from the bot

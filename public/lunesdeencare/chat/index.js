@@ -30,6 +30,7 @@ const addMessage = (message, name) => {
   msgElement.appendChild(span);
   container.appendChild(header);
   container.appendChild(msgElement);
+
   span.innerHTML = message;
 
   chatbox.prepend(container);
