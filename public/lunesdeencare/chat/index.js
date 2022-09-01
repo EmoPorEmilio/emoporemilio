@@ -12,7 +12,7 @@ const deleteFirstMessage = () => {
     // second state
     message.HTML.style.animationName = 'fadeOut';
     message.HTML.style.opacity = 0;
-    message.HTML.style.transform = 'scale(0)';
+    message.HTML.style.transform = 'scale(0) ';
   });
   setTimeout(() => chatbox.removeChild(message.HTML), 1000);
 };
