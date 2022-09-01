@@ -7,6 +7,26 @@
       body {
         margin: 0;
       }
+      @keyframes fadeIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        from {
+          transform: scale(1);
+          opacity: 1;
+        }
+        to {
+          transform: scale(0);
+          opacity: 0;
+        }
+      }
       #chatbox {
         overflow: hidden;
         height: 600px;
@@ -20,10 +40,13 @@
         flex-direction: column;
         background-color: rgb(69, 40, 61, 0.85);
         border-radius: 12px;
-        transform: scale(0);
-        opacity: 0;
-        transition: opacity, transform 1000ms;
-        will-change: transform, opacity;
+        transform: scale(1);
+        opacity: 1;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+      }
+      .message > span {
+        overflow-wrap: break-word;
       }
       .message {
         font-family: 'Jost';
@@ -31,6 +54,9 @@
         color: #fff;
         flex: 1;
         display: flex;
+        flex-direction: column;
+        gap: 0px;
+
         padding: 12px;
       }
       .header {

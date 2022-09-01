@@ -61,6 +61,7 @@ const names = [
   'nikorc93',
   'Uruguays',
   'programacion_en_esp',
+  'StackThePile',
 ];
 
 let currentNameIndex = 0;

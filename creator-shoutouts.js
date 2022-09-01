@@ -7,4 +7,8 @@ export const creadores = [
     name: 'ManzDev',
     message: 'Pueden seguirlo en https://www.twitch.tv/ManzDev',
   },
+  {
+    name: 'StackThePile',
+    message: 'Pueden seguirlo en https://www.twitch.tv/StackThePile',
+  },
 ];
