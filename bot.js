@@ -100,7 +100,7 @@ export const setupBot = (io) => {
       );
       foundCommand =
         foundCommand ||
-        creadores.find((creador) => sameCommand(creador.name, command));
+        creadores.find((creador) => sameCommand(creador.names, command));
       if (foundCommand) {
         if (
           foundCommand.name === 'reset' &&
@@ -135,7 +135,6 @@ export const setupBot = (io) => {
   // Called every time a message comes in
   function onMessageHandler(target, context, msg, self) {
     //
-    console.log(context);
     const emotesParsedMsg = parseEmotes(
       htmlToText(msg),
       context.emotes ?? {},
