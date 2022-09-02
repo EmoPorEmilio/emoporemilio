@@ -10,21 +10,17 @@
       @keyframes fadeIn {
         from {
           transform: scale(0);
-          opacity: 0;
         }
         to {
           transform: scale(1);
-          opacity: 1;
         }
       }
       @keyframes fadeOut {
         from {
           transform: scale(1);
-          opacity: 1;
         }
         to {
           transform: scale(0);
-          opacity: 0;
         }
       }
       #chatbox {
@@ -41,10 +37,10 @@
         background-color: rgb(69, 40, 61, 0.85);
         border-radius: 12px;
         transform: scale(1);
-        opacity: 1;
         animation-name: fadeIn;
-        animation-duration: 0.5s;
+        animation-duration: 0.3s;
         animation-timing-function: ease-out;
+        transform-origin: 100% 100%;
       }
       .message > span {
         overflow-wrap: break-word;

@@ -1,7 +1,7 @@
 // web sockets
 let socket = null;
 
-const max_longevity_message_ms = 3 * 60 * 1000;
+const max_longevity_message_ms = /*3 * 60 **/ 1000;
 const messages = [];
 let chatbox = null;
 
@@ -11,7 +11,6 @@ const deleteFirstMessage = () => {
   requestAnimationFrame(() => {
     // second state
     message.HTML.style.animationName = 'fadeOut';
-    message.HTML.style.opacity = 0;
     message.HTML.style.transform = 'scale(0) ';
   });
   setTimeout(() => chatbox.removeChild(message.HTML), 1000);
