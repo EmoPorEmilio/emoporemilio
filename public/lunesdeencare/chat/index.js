@@ -1,7 +1,7 @@
 // web sockets
 let socket = null;
 
-const max_longevity_message_ms = /*3 * 60 **/ 1000;
+const max_longevity_message_ms = 3 * 60 * 1000;
 const messages = [];
 let chatbox = null;
 
