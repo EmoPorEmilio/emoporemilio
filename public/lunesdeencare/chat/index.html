@@ -34,13 +34,14 @@
       .container {
         display: flex;
         flex-direction: column;
-        background-color: rgb(69, 40, 61, 0.85);
+        background-color: rgb(20, 20, 20, 0.85);
         border-radius: 12px;
         transform: scale(1);
         animation-name: fadeIn;
         animation-duration: 0.3s;
         animation-timing-function: ease-out;
         transform-origin: 100% 100%;
+        border-bottom: 2px solid #c3e19b;
       }
       .message > span {
         overflow-wrap: break-word;
@@ -61,10 +62,11 @@
         padding-right: 12px;
         display: flex;
         height: 45px;
-        background-color: #111111;
+        background-color: #141414;
         align-items: center;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+        border-bottom: 1px solid #c3e19b;
       }
       img {
         object-fit: contain;
@@ -72,7 +74,7 @@
       .name {
         font-family: 'Jost';
         font-weight: 600;
-        color: #c3e19b;
+        color: #d072b7;
         font-size: 22px;
         padding-left: 12px;
         flex: 1;
@@ -88,6 +90,15 @@
     </style>
   </head>
   <body onload="init()">
-    <div id="chatbox"></div>
+    <div id="chatbox">
+      <div class="container">
+        <div class="header">
+          <img src="https://cdn.discordapp.com/avatars/123456789012345678/123456789012345678.png?size=128" />
+          <div class="name">Name</div>
+        </div>
+        <div class="message">
+          <span>Message</span>
+        </div>
+    </div>
   </body>
 </html>
