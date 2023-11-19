@@ -20,8 +20,7 @@ if (process.env.NODE_ENV === 'production') {
   //* HTTPS *//
   const privateKey = fs.readFileSync(environment.privateKey);
   const certificate = fs.readFileSync(environment.certificate);
-  const chain = fs.readFileSync(environment.chain);
-  const credentials = { key: privateKey, cert: certificate, ca: chain };
+  const credentials = { key: privateKey, cert: certificate };
 
   server = https
     .createServer(credentials, app)
