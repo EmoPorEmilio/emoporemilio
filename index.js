@@ -16,9 +16,9 @@ var app = express();
 let server = null;
 
 if (process.env.NODE_ENV === 'production') {
-console.log(environment.APP_BASE_PATH);  
+  console.log(environment.APP_BASE_PATH);
 
-app.use(express.static(environment.APP_BASE_PATH + 'public'));
+  app.use(express.static(environment.APP_BASE_PATH + 'public'));
   //* HTTPS *//
   const privateKey = fs.readFileSync(environment.privateKey);
   const certificate = fs.readFileSync(environment.certificate);
@@ -33,7 +33,6 @@ app.use(express.static(environment.APP_BASE_PATH + 'public'));
       );
     });
 } else {
-console.log("test")
   app.use(express.static(environment.APP_BASE_PATH_LOCAL + 'public'));
   server = http
     .createServer(app)
