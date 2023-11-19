@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
   const options = { requestCert: true, rejectUnauthorized: true, key: privateKey, cert: certificate };
 
   server = https
-    .createServer(credentials, app)
+    .createServer(options, app)
     .listen(environment.EXPRESS_HTTPS_PORT, function () {
       console.log(
         'EmoPorEmilio corriendo en el puerto ' + environment.EXPRESS_HTTPS_PORT
