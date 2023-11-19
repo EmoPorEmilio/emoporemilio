@@ -19,7 +19,7 @@ class Circle {
 }
 
 var pinkCircle = null;
-var limeCircle = null;
+var blueCircle = null;
 var logoIMG = null;
 
 const setup = () => {
@@ -30,17 +30,17 @@ const setup = () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   canvasRadius = Math.min(canvas.width, canvas.height);
-  let limeToPinkRelation = 292 / 348;
+  let blueToPinkRelation = 292 / 348;
   let pinkRadius = canvasRadius / 6;
-  let limeRadius = limeToPinkRelation * pinkRadius;
-  let pinkToRightFromLimeCenterOffsetRelation = 175 / 292;
+  let blueRadius = blueToPinkRelation * pinkRadius;
+  let pinkToRightFromblueCenterOffsetRelation = 175 / 292;
   let pinkCenterOffsetInPX =
-    limeRadius * pinkToRightFromLimeCenterOffsetRelation;
+    blueRadius * pinkToRightFromblueCenterOffsetRelation;
 
-  let logoWidth = pinkRadius + limeRadius - pinkCenterOffsetInPX;
+  let logoWidth = pinkRadius + blueRadius - pinkCenterOffsetInPX;
   let logoLeftMargin = (canvas.width - logoWidth) / 2;
-  let limeCenter = logoLeftMargin + limeRadius;
-  let pinkCenter = limeCenter + limeRadius + pinkRadius - pinkCenterOffsetInPX;
+  let blueCenter = logoLeftMargin + blueRadius;
+  let pinkCenter = blueCenter + blueRadius + pinkRadius - pinkCenterOffsetInPX;
 
   pinkCircle = new Circle(
     pinkCenter,
@@ -51,21 +51,21 @@ const setup = () => {
     {
       strokeWidth: 10,
       innerShadowDistance: 7,
-      gradientTop: '#d583bf',
-      gradientBot: '#b5639f',
+      gradientTop: '#DF5C9A',
+      gradientBot: '#ad3a72',
     }
   );
-  limeCircle = new Circle(
+  blueCircle = new Circle(
     canvas.width / 2,
     0,
     canvas.width / 2,
     canvas.height / 2,
-    limeRadius,
+    blueRadius,
     {
       strokeWidth: 10,
       innerShadowDistance: 7,
-      gradientTop: '#cbe5a8',
-      gradientBot: '#aac487',
+      gradientTop: '#87c8ea',
+      gradientBot: '#5c91ac',
     }
   );
   requestAnimationFrame(drawLoop);
@@ -82,7 +82,7 @@ const loadLogo = () => {
 const drawLoop = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(logoIMG, 0, 0);
-  drawCircle(limeCircle);
+  drawCircle(blueCircle);
   drawCircle(pinkCircle);
   requestAnimationFrame(drawLoop);
 };
@@ -110,7 +110,7 @@ const drawCircle = (circle) => {
 
   context.fillStyle = '#ffffff';
   context.beginPath();
-  context.arc(currentX, currentY, radius, 1 * Math.PI, 2 * Math.PI);
+  context.arc(currentX, currentY, radius, 0, 2 * Math.PI);
   context.fill();
 
   var grd = context.createLinearGradient(
