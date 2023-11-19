@@ -16,12 +16,14 @@ var app = express();
 let server = null;
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(environment.APP_BASE_PATH + 'public'));
+console.log(environment.APP_BASE_PATH);  
+
+app.use(express.static(environment.APP_BASE_PATH + 'public'));
   //* HTTPS *//
   const privateKey = fs.readFileSync(environment.privateKey);
   const certificate = fs.readFileSync(environment.certificate);
   const chain = fs.readFileSync(environment.chain);
-  const options = { requestCert: true, rejectUnauthorized: true, key: privateKey, cert: certificate, ca: chain };
+  const options = { key: privateKey, cert: certificate };
 
   server = https
     .createServer(options, app)
@@ -31,6 +33,7 @@ if (process.env.NODE_ENV === 'production') {
       );
     });
 } else {
+console.log("test")
   app.use(express.static(environment.APP_BASE_PATH_LOCAL + 'public'));
   server = http
     .createServer(app)
@@ -43,6 +46,6 @@ if (process.env.NODE_ENV === 'production') {
 
 //* BOT *//
 
-const io = new Server(server);
+//const io = new Server(server);
 
-setupBot(io);
+//setupBot(io);
