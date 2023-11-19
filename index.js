@@ -23,7 +23,7 @@ app.use(express.static(environment.APP_BASE_PATH + 'public'));
   const privateKey = fs.readFileSync(environment.privateKey);
   const certificate = fs.readFileSync(environment.certificate);
   const chain = fs.readFileSync(environment.chain);
-  const options = { key: privateKey, cert: certificate };
+  const options = { key: privateKey, cert: certificate, ca: chain };
 
   server = https
     .createServer(options, app)
