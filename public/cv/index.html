@@ -11,10 +11,14 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@100, 200, 300, 500, 700, 900&display=swap"
       rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sen:wght@100, 200, 300, 500, 700, 900&display=swap"
+      rel="stylesheet" />
     <style>
       body {
-        background-color: #141414;
-        font-family: Jost;
+        background-color: #ffffff;
+        font-family: 'Sen', sans-serif;
+        letter-spacing: 0.05em;
       }
       article {
         margin-bottom: 2rem;
@@ -27,35 +31,44 @@
       li,
       ul {
         font-weight: 400;
-        color: #8da9b7;
+        color: #4f6d85;
         font-size: 1.1rem;
         margin: 0;
       }
       h1 {
+        color: #df5c9a;
         text-align: center;
         font-family: Jost;
         font-size: 4rem;
         font-weight: 700;
-
-        background: -webkit-linear-gradient(#e680b0, #c84492);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         margin: 0;
       }
       h2 {
         font-family: Jost;
         font-size: 2rem;
-        font-weight: 500;
-        color: #75abc7;
+        font-weight: 700;
+        color: #df5c9a;
         margin: 0;
       }
       h3 {
         font-family: Jost;
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: #adccdc;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #75abc7;
         margin: 0;
+      }
+      @media screen and (max-width: 600px) {
+        p {
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 2rem;
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -69,14 +82,16 @@
       /></a>
       (&#x1F1FA;&#x1F1FE;)
     </p>
-    <p style="text-align: center">
-      franceschini.emilio@gmail.com / +598 98 222 161
-    </p>
+    <p style="text-align: center">franceschini.emilio@gmail.com</p>
+    <p style="text-align: center">+598 98 222 161</p>
     <article>
       <h2>About me</h2>
       <section>
-        <h3>Full Stack Developer</h3>
-        <p>Hi there! I am a full stack developer from Montevideo, Uruguay.</p>
+        <h3>Product Engineer</h3>
+        <p>
+          Hi there! I am a software engineer focused on Product building from
+          Montevideo, Uruguay.
+        </p>
         <p>
           With over 5 years of professional experience and a lifelong (pretty
           much literally) passion for software development, I have honed skills

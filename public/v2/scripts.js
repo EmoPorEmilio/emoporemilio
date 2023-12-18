@@ -25,7 +25,7 @@ var logoIMG = null;
 const setup = () => {
   canvas = document.getElementById('mainCanvas');
   context = canvas.getContext('2d');
-  loadLogo();
+  //loadLogo();
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -81,11 +81,14 @@ const loadLogo = () => {
 
 const drawLoop = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.drawImage(logoIMG, 0, 0);
+  //context.drawImage(logoIMG, 0, 0);
   drawCircle(blueCircle);
   drawCircle(pinkCircle);
+  drawArrayCircles();
   requestAnimationFrame(drawLoop);
 };
+
+const drawArrayCircles = () => {};
 
 const drawCircle = (circle) => {
   circle.acceleration = circle.acceleration + 2;
