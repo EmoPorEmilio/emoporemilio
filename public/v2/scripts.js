@@ -106,7 +106,7 @@ const drawCircle = (circle) => {
     style: { innerShadowDistance, strokeWidth, gradientBot, gradientTop },
   } = circle;
 
-  context.fillStyle = '#141414';
+  context.fillStyle = '#1D272E';
   context.beginPath();
   context.arc(currentX, currentY, radius + strokeWidth, 0, 2 * Math.PI);
   context.fill();
