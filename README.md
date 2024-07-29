@@ -1,6 +1,7 @@
 ### Bueeeeeeenas
 
-Soy EmoPorEmilio, apasionado por la ingeniería de software, diseño UI/UX y lo' jueguito', transmito online acerca de juegos y tecnología en general.
+Soy EmoPorEmilio, apasionado por la ingeniería de software, diseño UI/UX y lo' jueguito'.
+Transmito online acerca de juegos y tecnología en general.
 <!--
 **EmoPorEmilio/emoporemilio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
