@@ -1,7 +1,7 @@
-### Bueeeeeeenas
+### Hey there!
 
-Soy EmoPorEmilio, apasionado por la ingeniería de software, diseño UI/UX y el gaming.  
-Transmito online acerca de juegos y tecnología en general.
+I'm Emilio Franceschini.
+Based in Uruguay, crafting frontend experiences with TypeScript while transitioning into Design Engineering with a focus on UI architecture, design systems and computer graphics fundamentals.
 <!--
 **EmoPorEmilio/emoporemilio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
