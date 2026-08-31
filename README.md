@@ -1,6 +1,6 @@
 ### Hey there!
 
-I'm Emilio Franceschini, a Design Engineer (2 YoE), previously a Full Stack Software Engineer (8 YoE) from Uruguay.  
+I'm Emilio Franceschini, a Full Stack Software Engineer transitioning to Design Engineering from Uruguay.  
 Particularly interested in accessibility, design systems and computer graphics, with decent exposure to TypeScript and full-stack web development.  
 My current ideal stack spans: Solid.js, Cloudflare with Alchemy, Tanstack, Effect-ts, Rust (mostly in WASM) and WebGPU
 
