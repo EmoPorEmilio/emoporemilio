@@ -1,8 +1,8 @@
 ### Hey there!
 
-I'm Emilio Franceschini, a Full Stack Software Engineer transitioning to Design Engineering from Uruguay.  
-Particularly interested in accessibility, design systems and computer graphics, with decent exposure to TypeScript and full-stack web development.  
-My current ideal stack spans: Solid.js, Cloudflare with Alchemy, Tanstack, Effect-ts, Rust (mostly in WASM) and WebGPU
+I'm Emilio Franceschini, a Full Stack Software Engineer from Uruguay.  
+Particularly interested in user-facing applications, gdesign systems and computer graphics, with decent exposure to TypeScript and full-stack web development.  
+My current ideal stack spans: Solid.js, Cloudflare with Alchemy, Tanstack, Effect-ts, Rust (mostly in WASM) and WebGPU.
 
 <!--
 **EmoPorEmilio/emoporemilio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
